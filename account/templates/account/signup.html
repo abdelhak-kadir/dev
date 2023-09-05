@@ -1,0 +1,255 @@
+{% extends "account/main.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .gradient-custom {
+        /* fallback for old browsers */
+        background: #93aafb;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to bottom right, rgb(38, 67, 227), rgb(75, 65, 155));
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to bottom right, rgb(12, 53, 111), rgb(112, 132, 232))
+    }
+
+    .navbar-logo {
+        max-height: 50px;
+    }
+
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+    }
+
+    .card-registration .select-arrow {
+        top: 13px;
+    }
+
+    img {
+        width: 150px;
+    }
+
+    /* IMAGE STYLES */
+    [type=radio]+img {
+        cursor: pointer;
+    }
+
+    /* CHECKED STYLES */
+    [type=radio]:checked+img {
+        outline: 2px solid #f00;
+    }
+</style>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100" style="padding-top: 0rem!important;">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">إستمارة التسجيل</h3>
+                        <form>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="firstName" class="form-control form-control-lg"
+                                            placeholder=" الاسم" />
+                                        <label class="form-label" for="firstName"></label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="lastName" class="form-control form-control-lg"
+                                            placeholder="اسم العائلة" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="username" class="form-control form-control-lg"
+                                            placeholder="اللقب" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="lastName" class="form-control form-control-lg"
+                                            placeholder="رقم البطاقة الوطنية" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                    <div class="form-outline datepicker w-100">
+                                        <label for="birthdayDate" class="form-label">تاريخ الميلاد</label>
+                                        <input type="date" class="form-control form-control-lg" id="birthdayDate" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <h6 class="mb-2 pb-1">الجنس :</h6>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="femaleGender" value="option1" checked />
+                                        <label class="form-check-label" for="femaleGender">أنثى</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="maleGender" value="option2" />
+                                        <label class="form-check-label" for="maleGender">ذكر</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="email" id="emailAddress" class="form-control form-control-lg"
+                                            placeholder=" بريدإلكتروني" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="tel" id="phoneNumber" class="form-control form-control-lg"
+                                            placeholder="رقم الهاتف" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    اختر وسيلة النقل الخاصة بك
+                            </div>
+
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-4 mb-4 pb-2">
+                                                    <div class="form-outline">
+                                                        <select class="form-select form-select-lg mb-3"
+                                                            aria-label="Default select example">
+                                                            <option selected>3.5t</option>
+                                                            <option value="1">baché</option>
+                                                            <option value="2">plateau</option>
+                                                            <option value="3">plateau ridal</option>
+                                                            <option value="">avec grue</option>
+                                                            <option value="">fourgon</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-4 mb-4 pb-2">
+                                                    <div class="form-outline">
+                                                        <select class="form-select form-select-lg mb-3"
+                                                            aria-label="Default select example">
+                                                            <option selected>7.5t</option>
+                                                            <option value="1">baché</option>
+                                                            <option value="2">plateau</option>
+                                                            <option value="3">plateau ridal</option>
+                                                            <option value="">avec grue</option>
+                                                            <option value="">fourgon</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-4 mb-4 pb-2">
+                                                    <div class="form-outline">
+                                                        <select class="form-select form-select-lg mb-3"
+                                                            aria-label="Default select example">
+                                                            <option selected>10t</option>
+                                                            <option value="1">baché</option>
+                                                            <option value="2">plateau</option>
+                                                            <option value="3">plateau ridal</option>
+                                                            <option value="">avec grue</option>
+                                                            <option value="">fourgon</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-4 mb-4 pb-2">
+                                                    <div class="form-outline">
+                                                        <select class="form-select form-select-lg mb-3"
+                                                            aria-label="Default select example">
+                                                            <option selected>14t</option>
+                                                            <option value="1">baché</option>
+                                                            <option value="2">plateau</option>
+                                                            <option value="3">plateau ridal</option>
+                                                            <option value="">avec grue</option>
+                                                            <option value="">fourgon</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-4 mb-4 pb-2">
+                                                    <div class="form-outline">
+                                                        <select class="form-select form-select-lg mb-3"
+                                                            aria-label="Default select example">
+                                                            <option selected> 19t +</option>
+                                                            <option value="1">baché</option>
+                                                            <option value="2">plateau</option>
+                                                            <option value="3">plateau ridal</option>
+                                                            <option value="">avec grue</option>
+                                                            <option value="">fourgon</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-bs-dismiss="modal">save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-2">
+                                <button class="btn btn-primary btn-lg" type="submit" value="Submit">تأكيد</button>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

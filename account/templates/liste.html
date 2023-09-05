@@ -1,0 +1,48 @@
+{% extends 'account/main.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Transporteur</h5>
+        </div>
+        <div class="card card-body">
+            <table class="table table-success table-striped-columns">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">first Name</th>
+                        <th scope="col">Last name </th>
+                        <th scope="col">nickname</th>
+                        <th scope="col">CNI</th>
+                        <th scope="col">birth day</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">phone number</th>
+                        <th scope="col">weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for i in transporteur %}
+                    <tr>
+                        <td>{{i.name}} </td>
+                        <td>{{i.prenom}} </td>
+                        <td>{{i.nickname}} </td>
+                        <td>{{i.cni}} </td>
+                        <td>{{i.birth_date}} </td>
+                        <td>{{i.gender}} </td>
+                        <td>{{i.email}} </td>
+                        <td>{{i.phone_number}} </td>
+                        <td>{{i.weight}} </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
